@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+import statistics
+
 def display_welcome():
     print("The Test Scores program")
     print("Enter 'x' to exit")
@@ -21,22 +23,25 @@ def get_scores():
 
 def process_scores(scores):
     total_scores = 0
-    count = len(scores)
-    # calculate total score
     for score in scores:
-
+        total_scores += score # total_scores = total_scores + score
     average = total_scores / len(scores)
+    median_index = len(scores) // 2
+    median = statistics.median(scores)
 
-    # # format and display the result
-    # print()
-    # print("Score total:       ", score_total)
-    # print("Number of Scores:  ", count)
-    # print("Average Score:     ", average)
+    # format and display the result
+    print()
+    print("Score total:       ", total_scores)
+    print("Number of Scores:  ", len(scores))
+    print("Average Score:     ", average)
+    print("Low Score:         ", min(scores))
+    print("High Score:        ", max(scores))
+    print("Median Score:      ", median)
 
 def main():
     display_welcome()
-    score_total, count = get_scores()
-    process_scores(score_total, count)
+    scores = get_scores()
+    process_scores(scores)
     print("")
     print("Bye!")
 
