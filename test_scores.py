@@ -10,7 +10,7 @@ def display_welcome():
 def get_scores():
     scores = []
     while True:
-        score = input("Enter test score: ")
+        score = input("Enter test score:  ")
         if score == "x":
             return  scores
         else:
@@ -31,12 +31,12 @@ def process_scores(scores):
 
     # format and display the result
     print()
-    print("Score total:       ", total_scores)
-    print("Number of Scores:  ", len(scores))
-    print("Average Score:     ", average)
-    print("Low Score:         ", min(scores))
-    print("High Score:        ", max(scores))
-    print("Median Score:      ", median)
+    print("Score total:      ", total_scores)
+    print("Number of Scores: ", len(scores))
+    print("Average Score:    ", average)
+    print("Low Score:        ", min(scores))
+    print("High Score:       ", max(scores))
+    print("Median Score:     ", median)
 
 def main():
     display_welcome()
@@ -48,5 +48,3 @@ def main():
 # if started as the main module, call the main function
 if __name__ == "__main__":
     main()
-
-
